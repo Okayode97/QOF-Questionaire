@@ -6,7 +6,7 @@ enum ChronicConditions {
   htn,
 }
 
-class Questionnaires {
+class QuestionnaireServices {
 
   // get the path of the json file for each chronic condition
   String _getCCQuestionnairePath(ChronicConditions conditions){
