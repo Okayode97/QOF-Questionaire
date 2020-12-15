@@ -1,0 +1,87 @@
+{
+    "Chronic Condition": "HyperTension",
+    "About": "Have you ever been diagnosed with high blood pressure?",
+    "Questions":[
+        {
+           "text": "What is your usual systolic blood pressure?",
+           "answer":[
+                {
+                   "text:": "140 < SBP < 180",
+                   "score": -1
+               },
+               {
+                   "text": "SBP > 180",
+                   "score": -1
+               },
+               {
+                    "text": "SBP < 140",
+                    "score": 0
+               }
+           ] 
+        },
+        {
+            "text": "What is your usual diastolic blood pressure?",
+            "answer":[
+                 {
+                    "text:": "90 < DBP < 120",
+                    "score": -1
+                },
+                {
+                    "text": "DBP >= 120",
+                    "score": -1
+                },
+                {
+                    "text": "DBP < 90",
+                    "score": 0
+                }
+            ] 
+         },
+         {
+             "text": "How many medication do you take to manage your condition",
+             "answers":[
+                 {
+                     "text": "No medication",
+                     "score": 0
+                 },
+                 {
+                     "text": "1 - 3 Medication",
+                     "score": 0
+                 },
+                 {
+                    "text": " More than 3 medication",
+                    "score": -1
+                 }
+             ]
+         },
+         {
+             "text": "Have you made any changes to your lifestyle to reduce your blood pressure",
+             "answers":[
+                 {
+                    "text": "No changes to your lifestyle",
+                    "score": 0
+                 },
+                 {
+                    "text": "Few changes to your lifestyle",
+                    "score": 1
+                 },
+                 {
+                     "text": "More than 4 changes to your lifestyle",
+                     "score": 2
+                 }
+             ]
+         },
+         {
+             "text": "Have you noticed any blood in your urine?",
+             "answers":[
+                 {
+                     "text": "Yes",
+                     "score": 1
+                 },
+                 {
+                     "text": "No",
+                     "score": -1
+                 }
+             ]
+         }
+    ]
+}
