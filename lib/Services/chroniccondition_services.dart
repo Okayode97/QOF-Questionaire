@@ -1,6 +1,5 @@
-//https://flutter.dev/docs/development/ui/assets-and-images
-import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
+import 'package:flutter/services.dart' show rootBundle; //https://flutter.dev/docs/development/ui/assets-and-images
 import 'package:qof_sample_framework/Models/questionnaire.dart';
 
 // https://www.tutorialspoint.com/dart_programming/dart_programming_enumeration.htm
