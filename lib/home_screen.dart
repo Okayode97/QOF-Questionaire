@@ -58,28 +58,30 @@ class _HomeScreenState extends State<HomeScreen> {
 
           // if the future as finished!, return this widget
           if (snapshot.hasData){
-            return Column(
-              children: <Widget>[
+            return Center(
+              child: Column(
+                children: <Widget>[
 
-                // for each questionnaire object in the questionnaireList create a raisedbutton which links to the questionnaire screen for that
-                // particular questionnaire
-                for (Questionnaire questionnaire in  questionnairesList)
-                  RaisedButton(
-                    child: Text(
-                      questionnaire.chronicconditon
-                    ),
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          // the QuestionnaireScreen requires a questionnaire object as an input argument
-                          builder: (context) => QuestionnaireScreen(
-                            questionnaire: questionnaire
+                  // for each questionnaire object in the questionnaireList create a raisedbutton which links to the questionnaire screen for that
+                  // particular questionnaire
+                  for (Questionnaire questionnaire in  questionnairesList)
+                    RaisedButton(
+                      child: Text(
+                        '${questionnaire.chronicconditon}'
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            // the QuestionnaireScreen requires a questionnaire object as an input argument
+                            builder: (context) => QuestionnaireScreen(
+                              questionnaire: questionnaire
+                            )
                           )
-                        )
-                      );
-                    },
-                )
-              ],
+                        );
+                      },
+                  )
+                ],
+              ),
             );
           }
           

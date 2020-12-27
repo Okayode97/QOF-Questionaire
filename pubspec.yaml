@@ -9,6 +9,8 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.0
+  dots_indicator: ^1.2.0
+  group_radio_button: ^1.0.1
 
 dev_dependencies:
   flutter_test:

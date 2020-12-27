@@ -28,7 +28,7 @@ class Questionnaire {
     Questions.fromJson(i)).toList();
 
     return Questionnaire(
-      chronicconditon: json['ChronicConditions'],
+      chronicconditon: json['ChronicCondition'],
       about: json['About'],
       questions: questionList
     );

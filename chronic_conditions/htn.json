@@ -3,12 +3,8 @@
     "About": "Have you ever been diagnosed with high blood pressure?",
     "Questions":[
         {
-           "question": "What is your usual systolic blood pressure?",
+           "question": "What is your usual systolic blood pressure (SBP)?",
            "answers":[
-                {
-                   "response:": "140 < SBP < 180",
-                   "score": -1
-               },
                {
                    "response": "SBP > 180",
                    "score": -1
@@ -16,6 +12,10 @@
                {
                     "response": "SBP < 140",
                     "score": 0
+               },
+               {
+                    "response": "140 < SBP < 180",
+                    "score": -1
                }
            ] 
         },
