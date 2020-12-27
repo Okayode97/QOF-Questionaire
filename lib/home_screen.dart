@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qof_sample_framework/Services/chroniccondition_services.dart';
 import 'package:qof_sample_framework/Models/questionnaire.dart';
-import 'package:qof_sample_framework/questionnaire_scree.dart';
+import 'package:qof_sample_framework/questionnaire_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -12,6 +12,8 @@ class _HomeScreenState extends State<HomeScreen> {
   
   // list of questionnaire objects
   List<Questionnaire> questionnairesList;
+
+  // a future object which would populate the above list with questionnaire object for each chronic condition
   Future<bool> allQuestionnaireFutures;
 
   @override
@@ -22,6 +24,8 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<bool> loadQOF() async {
+
+    // create an instance of the questionnaireServices class
     final questionnairesservices = QuestionnaireServices();
     questionnairesList = [];
 
@@ -56,20 +60,24 @@ class _HomeScreenState extends State<HomeScreen> {
           if (snapshot.hasData){
             return Column(
               children: <Widget>[
+
+                // for each questionnaire object in the questionnaireList create a raisedbutton which links to the questionnaire screen for that
+                // particular questionnaire
                 for (Questionnaire questionnaire in  questionnairesList)
                   RaisedButton(
+                    child: Text(
+                      questionnaire.chronicconditon
+                    ),
                     onPressed: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) {
-                            QuestionnaireScreen(questionnaire: questionnaire)
-                          }
+                          // the QuestionnaireScreen requires a questionnaire object as an input argument
+                          builder: (context) => QuestionnaireScreen(
+                            questionnaire: questionnaire
+                          )
                         )
                       );
                     },
-                    child: Text(
-                      questionnaire.chronicconditon
-                    )
                 )
               ],
             );

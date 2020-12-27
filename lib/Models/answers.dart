@@ -3,7 +3,7 @@ import 'package:meta/meta.dart';
 class Answer{
 
   String response;
-  String score;
+  final int score;
 
   Answer({
     @required this.response,
