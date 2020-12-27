@@ -6,33 +6,33 @@
            "question": "What is your usual systolic blood pressure (SBP)?",
            "answers":[
                {
-                   "response": "SBP > 180",
-                   "score": -1
-               },
-               {
                     "response": "SBP < 140",
                     "score": 0
                },
                {
-                    "response": "140 < SBP < 180",
+                    "response": "SBP > 180",
                     "score": -1
+               },
+               {
+                    "response": "140 < SBP < 180",
+                    "score": -2
                }
            ] 
         },
         {
-            "question": "What is your usual diastolic blood pressure?",
+            "question": "What is your usual diastolic blood pressure (DBP)?",
             "answers":[
-                 {
-                    "response": "90 < DBP < 120",
-                    "score": -1
-                },
-                {
-                    "response": "DBP >= 120",
-                    "score": -1
-                },
                 {
                     "response": "DBP < 90",
                     "score": 0
+                },
+                {
+                    "response": "DBP >= 120",
+                    "score": -2
+                },
+                {
+                    "response": "90 < DBP < 120",
+                    "score": -1
                 }
             ] 
          },
@@ -49,7 +49,7 @@
                  },
                  {
                     "response": " More than 3 medication",
-                    "score": -1
+                    "score": -2
                  }
              ]
          },

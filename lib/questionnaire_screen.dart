@@ -29,7 +29,7 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
   // recap that each questionnaire as it's own list of questions
   List<Questions> get questions => widget.questionnaire.questions;
 
-  // index for each chronic condition
+  // index for each question in that chronic condition questionnaire
   int questionIndex;
 
   // get the number of questions in the questionnaire
@@ -38,9 +38,25 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
   // Get the current question from the list of questions defined above
   Questions get currentQuestion => questions[questionIndex];
 
-  // not entirely sure what is being done here
+  // A list of chosen answers
+  // recap that the score for each response is an integar
   List<int> chosenAnswers;
+
+  // check that the user has answered the question by checking that it is not null
   bool get userhasAnsweredCurrentQuestion => chosenAnswers[questionIndex] != null;
+
+  String getResultInterpretation() {
+    // calculate user's total score
+    int result = 0;
+    for (int index = 0; index < numberOfQuestions; index++){
+      Questions question = questions[index];
+      int answerIndex = chosenAnswers[index];
+      Answer answer = question.answers[answerIndex];
+      int score = answer.score;
+
+      result += score;
+    }
+  }
 
   @override
   void initState() {
@@ -91,7 +107,9 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                 RadioGroup<String>.builder(
                   direction: Axis.vertical,
                   groupValue: null,
-                  onChanged: null,
+                  onChanged: (_, answerIndex) => setState((){
+                      chosenAnswers[questionIndex] = answerIndex;
+                  }),
                   items: currentQuestion.answers.map((answer) => answer.response).toList(),
                   itemBuilder: (item) => RadioButtonBuilder(
                     item,
@@ -103,6 +121,8 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                 Center(
                   child: Row(
                     children: <Widget>[
+
+                      // Back button is only visible when not on the first question
                       Visibility(
                         visible: questionIndex != 0,
                         child: RaisedButton(
@@ -114,13 +134,12 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                           },
                         ),
                       ),
+
+                      // Next button checks that the user as selectec an option from the list of possible answers, it does not respond untill the user as selected an option.
+                      // On the final page it will return to the main meny
                       RaisedButton(
                         child: Text('Next'),
-                        onPressed: () {
-                          setState(() {
-                            questionIndex++;
-                          });
-                        },
+                        onPressed: userhasAnsweredCurrentQuestion ? onNextButtonPressed : null,
                       ),
                     ],
                   ),
@@ -132,4 +151,16 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
       )
     );
   }
+
+  void onNextButtonPressed() {
+    // check that current question is not the last queston
+    if (questionIndex < numberOfQuestions -1 ){
+      // change the question index
+      setState((){
+        questionIndex++;
+      });
+    }
+  }
+
 }
+
