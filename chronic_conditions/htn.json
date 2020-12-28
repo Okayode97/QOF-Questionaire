@@ -7,15 +7,18 @@
            "answers":[
                {
                     "response": "SBP < 140",
-                    "score": 0
+                    "score": 0,
+                    "red_flag": false
                },
                {
                     "response": "SBP > 180",
-                    "score": -1
+                    "score": -1,
+                    "red_flag": false
                },
                {
                     "response": "140 < SBP < 180",
-                    "score": -2
+                    "score": -2,
+                    "red_flag": true
                }
            ] 
         },
@@ -24,15 +27,18 @@
             "answers":[
                 {
                     "response": "DBP < 90",
-                    "score": 0
+                    "score": 0,
+                    "red_flag": false
                 },
                 {
                     "response": "DBP >= 120",
-                    "score": -2
+                    "score": -2,
+                    "red_flag": false
                 },
                 {
                     "response": "90 < DBP < 120",
-                    "score": -1
+                    "score": -1,
+                    "red_flag": true
                 }
             ] 
          },
@@ -41,15 +47,18 @@
              "answers":[
                  {
                      "response": "No medication",
-                     "score": 0
+                     "score": 0,
+                     "red_flag": false
                  },
                  {
                      "response": "1 - 3 Medication",
-                     "score": 0
+                     "score": 0,
+                     "red_flag": false
                  },
                  {
-                    "response": " More than 3 medication",
-                    "score": -2
+                    "response": "More than 3 medication",
+                    "score": -2,
+                    "red_flag": true
                  }
              ]
          },
@@ -58,15 +67,18 @@
              "answers":[
                  {
                     "response": "No changes to your lifestyle",
-                    "score": 0
+                    "score": 0,
+                    "red_flag": false
                  },
                  {
                     "response": "Few changes to your lifestyle",
-                    "score": 1
+                    "score": 1,
+                    "red_flag": false
                  },
                  {
                      "response": "More than 4 changes to your lifestyle",
-                     "score": 2
+                     "score": 2,
+                     "red_flag": true
                  }
              ]
          },
@@ -75,11 +87,13 @@
              "answers":[
                  {
                      "response": "Yes",
-                     "score": 1
+                     "score": 1,
+                     "red_flag": false
                  },
                  {
                      "response": "No",
-                     "score": -1
+                     "score": -1,
+                     "red_flag": true
                  }
              ]
          }

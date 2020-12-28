@@ -48,6 +48,10 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
   // Get the list of answers, done as a means of bypassing the group_radio_button by using a for loop
   List<Answer> get answerList => questions[questionIndex].answers;
 
+  // Store a list of redflagged questions and the response
+  List<String>redFlaggedQuestions = [];
+  List<String>redFlaggedQuestionsResponse = [];
+
   int mapResponsetoIndex(String value) {
     var responseMap = new Map();
     int responseIndex = 0;
@@ -61,7 +65,7 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
   // Store the selected response from the radio buttons
   String _response = "";
 
-  int getResultInterpretation() {
+  int getTotalScore() {
     // calculate user's total score
     int result = 0;
     for (int index = 0; index < numberOfQuestions; index++){
@@ -74,6 +78,25 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
     }
     return result;
   }
+
+  // Any response that as been marked as a red flag should be highlighted to the GP
+  void checkForRedFlags() {
+    for(int index=0; index < numberOfQuestions; index++){
+      Questions question = questions[index];
+      int answerIndex = chosenAnswers[index];
+
+      // get the answer that the user selected based on the answerIndex
+      Answer answer = question.answers[answerIndex];
+      bool redflag = answer.red_flag;
+
+      // if the selected answer has red_flag = true then mark the question and the user's response
+      if(redflag)
+      {
+        redFlaggedQuestions.add(question.question);
+        redFlaggedQuestionsResponse.add(answer.response);
+      }
+    }
+  } 
 
   @override
   void initState() {
@@ -180,6 +203,16 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
       setState((){
         questionIndex++;
       });
+    }
+    else{
+      checkForRedFlags();
+      int score = getTotalScore();
+      debugPrint('The total score from the questionnaire is $score');
+      for(String question in redFlaggedQuestions)
+        debugPrint('$question');
+      
+      for(String answer in redFlaggedQuestionsResponse)
+        debugPrint('$answer');
     }
   }
 
