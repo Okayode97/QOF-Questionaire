@@ -45,7 +45,23 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
   // check that the user has answered the question by checking that it is not null
   bool get userhasAnsweredCurrentQuestion => chosenAnswers[questionIndex] != null;
 
-  String getResultInterpretation() {
+  // Get the list of answers, done as a means of bypassing the group_radio_button by using a for loop
+  List<Answer> get answerList => questions[questionIndex].answers;
+
+  int mapResponsetoIndex(String value) {
+    var responseMap = new Map();
+    int responseIndex = 0;
+    for(Answer answer in answerList){
+      responseMap[answer.response] = responseIndex;
+      responseIndex++;
+    }
+    return responseMap[value];
+  }
+
+  // Store the selected response from the radio buttons
+  String _response = "";
+
+  int getResultInterpretation() {
     // calculate user's total score
     int result = 0;
     for (int index = 0; index < numberOfQuestions; index++){
@@ -56,6 +72,7 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
 
       result += score;
     }
+    return result;
   }
 
   @override
@@ -102,17 +119,21 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                     '${currentQuestion.question}'
                   ),
                 ),
-              
+
                 // Display the list of possible answers for that particular questions
                 RadioGroup<String>.builder(
                   direction: Axis.vertical,
-                  groupValue: null,
-                  onChanged: (_, answerIndex) => setState((){
+                  groupValue: _response,
+                  onChanged: (value) => setState((){
+                      _response = value;
+                      
+                      // convert the string to an integar which would be it's index
+                      int answerIndex = mapResponsetoIndex(value);
                       chosenAnswers[questionIndex] = answerIndex;
                   }),
                   items: currentQuestion.answers.map((answer) => answer.response).toList(),
-                  itemBuilder: (item) => RadioButtonBuilder(
-                    item,
+                   itemBuilder: (item) => RadioButtonBuilder(
+                   item,
                     textPosition: RadioButtonTextPosition.right,
                   )
                 ),
