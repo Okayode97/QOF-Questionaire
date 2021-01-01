@@ -1,0 +1,26 @@
+{
+    "ChronicCondition": "Atrial Fibrillation",
+    "About": "Have you ever been told you have an irregular heart rhythm",
+    "Questions":[
+        {
+           "question": "Do you have any of the following risk factors",
+           "answers":[
+               {
+                    "response": "SBP < 140",
+                    "score": 0,
+                    "red_flag": false
+               },
+               {
+                    "response": "SBP > 180",
+                    "score": -1,
+                    "red_flag": false
+               },
+               {
+                    "response": "140 < SBP < 180",
+                    "score": -2,
+                    "red_flag": true
+               }
+           ] 
+        }
+    ]
+}

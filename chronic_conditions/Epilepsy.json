@@ -1,0 +1,46 @@
+{
+    "ChronicCondition": "Epilepsy",
+    "About": "Have you ever been diagnosed with Epilepsy?",
+    "Questions":[
+        {
+           "question": "How is the frequency of your seizures",
+           "answers":[
+               {
+                    "response": "None",
+                    "score": 0,
+                    "red_flag": false
+               },
+               {
+                    "response": "1 - 2 seizures episodes a year",
+                    "score": -1,
+                    "red_flag": true
+               },
+               {
+                    "response": "More than 2 seizures epsiodes a year",
+                    "score": -2,
+                    "red_flag": true
+               }
+           ] 
+        },
+        {
+            "question": "Have you had advise regarding pregnancy and anti-epileptic drugs",
+            "answers":[
+                {
+                     "response": "Yes",
+                     "score": 0,
+                     "red_flag": false
+                },
+                {
+                     "response": "No",
+                     "score": 0,
+                     "red_flag": false
+                },
+                {
+                     "response": "Not applicable",
+                     "score": 0,
+                     "red_flag": false
+                }
+            ] 
+         }
+    ]
+}

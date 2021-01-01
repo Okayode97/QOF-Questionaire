@@ -1,0 +1,71 @@
+{
+    "ChronicCondition": "Depression",
+    "About": "Answer if you have experienced prolonged feelings of sadness, loss or anger?",
+    "Questions":[
+        {
+           "question": "Have you had any feeling of low mood for more than 2 weeks?",
+           "answers":[
+               {
+                    "response": "Yes",
+                    "score": 0,
+                    "red_flag": true
+               },
+               {
+                    "response": "No",
+                    "score": 0,
+                    "red_flag": false
+               }
+           ] 
+        },
+        {
+            "question": "Have you had any feeling of low anxiety for more than 2 weeks?",
+            "answers":[
+                {
+                     "response": "Yes",
+                     "score": 0,
+                     "red_flag": true
+                },
+                {
+                     "response": "No",
+                     "score": 0,
+                     "red_flag": false
+                }
+            ] 
+        },
+        {
+            "question": "Are you currently taking any anti-depressants?",
+            "answers":[
+                {
+                     "response": "Yes",
+                     "score": 0,
+                     "red_flag": true
+                },
+                {
+                     "response": "No",
+                     "score": 0,
+                     "red_flag": false
+                }
+            ] 
+         },
+         {
+            "question": "On a scale of green-red how would you rate your mood",
+            "answers":[
+                {
+                     "response": "Green (Good and stable)",
+                     "score": 0,
+                     "red_flag": false
+                },
+                {
+                     "response": "Amber (Improving)",
+                     "score": 0,
+                     "red_flag": false
+                },
+                {
+                    "response": "Red (Worsening)",
+                    "score": 0,
+                    "red_flag": true
+                }
+            ] 
+         }
+    ]
+}

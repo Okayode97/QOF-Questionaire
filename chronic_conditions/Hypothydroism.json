@@ -1,0 +1,41 @@
+{
+    "ChronicCondition": "Hypothyroidism",
+    "About": "Answer - if you had low thyroid levels?",
+    "Questions":[
+        {
+           "question": "Are uou being treated for low thyroid levles with levothyroxine?",
+           "answers":[
+               {
+                    "response": "Yes",
+                    "score": -1,
+                    "red_flag": false
+               },
+               {
+                    "response": "No",
+                    "score": -1,
+                    "red_flag": false
+               }
+           ] 
+        },
+        {
+            "question": "When was the last time you had measured your blood thyroid levels",
+            "answers":[
+                {
+                     "response": "less than 6 months",
+                     "score": 0,
+                     "red_flag": false
+                },
+                {
+                     "response": "More than 6 months",
+                     "score": 0,
+                     "red_flag": false
+                },
+                {
+                     "response": "More than 12 months",
+                     "score": -1,
+                     "red_flag": true
+                }
+            ] 
+         }
+    ]
+}

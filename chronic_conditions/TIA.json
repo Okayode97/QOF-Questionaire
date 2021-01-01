@@ -1,0 +1,81 @@
+{
+    "ChronicCondition": "TIA",
+    "About": "Have you experienced any weakness in the last 24hrs",
+    "Questions":[
+        {
+           "question": "Aged more than 60?",
+           "answers":[
+               {
+                    "response": "Yes",
+                    "score": 0,
+                    "red_flag": true
+               },
+               {
+                    "response": "No",
+                    "score": -1,
+                    "red_flag": false
+               }
+           ] 
+        },
+        {
+            "question": "What is your blood pressure (BP)?",
+            "answers":[
+                {
+                    "response": "BP > 140/90 avg",
+                    "score": -1,
+                    "red_flag": true
+                },
+                {
+                    "response": "BP < 14/90 avg",
+                    "score": 0,
+                    "red_flag": false
+                }
+            ] 
+        },
+        {
+            "question": "Have you experienced any weakness on oneside of the body?",
+            "answers":[
+                 {
+                    "response": "Yes",
+                    "score": 0,
+                    "red_flag": true
+                 },
+                 {
+                    "response": "No",
+                    "score": 0,
+                    "red_flag": false
+                 }
+            ] 
+        },
+        {
+            "question": "Do you experience any speech disturbance?",
+            "answers":[
+                {
+                    "response": "Yes",
+                    "score": 0,
+                    "red_flag": true
+                },
+                {
+                    "response": "No",
+                    "score": 0,
+                    "red_flag": false
+                }
+            ] 
+        },
+        {
+            "question": "What duration do you experience your speech disturbance for?",
+            "answers":[
+                {
+                    "response": "More than 60 mintues",
+                    "score": -2,
+                    "red_flag": true
+                },
+                {
+                    "response": "Less than 60 minutes",
+                    "score": -1,
+                    "red_flag": true
+                }
+            ] 
+        }
+    ]
+}

@@ -1,0 +1,96 @@
+{
+    "ChronicCondition": "Diabetes Mellitus",
+    "About": "Answer - if yoe are currently diagnosed with diabetes",
+    "Questions":[
+        {
+           "question": "Which type of diabetes?",
+           "answers":[
+               {
+                    "response": "Type 1",
+                    "score": 0,
+                    "red_flag": false
+               },
+               {
+                    "response": "Type 2",
+                    "score": 0,
+                    "red_flag": false
+               }
+           ] 
+        },
+        {
+            "question": "Are you currently using insulin?",
+            "answers":[
+                {
+                     "response": "Yes",
+                     "score": 0,
+                     "red_flag": false
+                },
+                {
+                     "response": "No",
+                     "score": 0,
+                     "red_flag": false
+                }
+            ] 
+         },
+         {
+            "question": "When was you last diabetes review?",
+            "answers":[
+                {
+                     "response": "Less than 6 months ago",
+                     "score": 0,
+                     "red_flag": false
+                },
+                {
+                     "response": "More than 6 months ago",
+                     "score": -1,
+                     "red_flag": false
+                }
+            ] 
+         },
+         {
+            "question": "Have you experienced any tingling sensation in your fingers or toes?",
+            "answers":[
+                {
+                     "response": "Yes",
+                     "score": -1,
+                     "red_flag": false
+                },
+                {
+                     "response": "No",
+                     "score": 0,
+                     "red_flag": false
+                }
+            ] 
+         },
+         {
+            "question": "Do you have any ulcers on your feet",
+            "answers":[
+                {
+                     "response": "Yes",
+                     "score": -1,
+                     "red_flag": false
+                },
+                {
+                     "response": "No",
+                     "score": 0,
+                     "red_flag": false
+                }
+            ] 
+         },
+         {
+            "question": "When was your last eye appointment?",
+            "answers":[
+                {
+                     "response": "Less than 6 months ago",
+                     "score": 0,
+                     "red_flag": false
+                },
+                {
+                     "response": "More than 6 months ago",
+                     "score": -1,
+                     "red_flag": true
+                }
+            ] 
+         }
+    ]
+}

@@ -1,0 +1,51 @@
+{
+    "ChronicCondition": "Osteoporosis",
+    "About": "Answer if you have had, a diagnosis of Osteoporosis on Scan",
+    "Questions":[
+        {
+           "question": "Are you above the age of 75",
+           "answers":[
+               {
+                    "response": "yes",
+                    "score": 0,
+                    "red_flag": false
+               },
+               {
+                    "response": "no",
+                    "score": -1,
+                    "red_flag": false
+               }
+           ] 
+        },
+        {
+            "question": "Are you had a facture in the last 12 months",
+            "answers":[
+                {
+                     "response": "yes",
+                     "score": 0,
+                     "red_flag": false
+                },
+                {
+                     "response": "no",
+                     "score": -1,
+                     "red_flag": false
+                }
+            ] 
+         },
+         {
+            "question": "Are you currently taking medication for low bone thinning/density?",
+            "answers":[
+                {
+                     "response": "yes",
+                     "score": 0,
+                     "red_flag": false
+                },
+                {
+                     "response": "no",
+                     "score": -1,
+                     "red_flag": false
+                }
+            ] 
+         }
+    ]
+}

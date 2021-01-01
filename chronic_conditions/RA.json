@@ -1,0 +1,46 @@
+{
+    "ChronicCondition": "Rhematoid Arthritis",
+    "About": "Answer if you have been diagnosed with Rheumatoid Arthritis",
+    "Questions":[
+        {
+           "question": "When was your last rheumatology review?",
+           "answers":[
+               {
+                    "response": "Less than 6 months",
+                    "score": 0,
+                    "red_flag": false
+               },
+               {
+                    "response": "More than 6 months",
+                    "score": 0,
+                    "red_flag": false
+               },
+               {
+                   "response": "More than 12 months",
+                   "score": 0,
+                   "red_flag": true
+               }
+           ] 
+        },
+        {
+            "question": "How is your joint pain?",
+            "answers":[
+                {
+                     "response": "Worse",
+                     "score": 0,
+                     "red_flag": true
+                },
+                {
+                     "response": "Improving",
+                     "score": 0,
+                     "red_flag": false
+                },
+                {
+                    "response": "Better",
+                    "score": 0,
+                    "red_flag": false
+                }
+            ] 
+         }
+    ]
+}
